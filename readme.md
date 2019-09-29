@@ -1,4 +1,3 @@
-![Prettier Banner]
 
 <h2 align="center">Sorting Algorithims</h2>
 
