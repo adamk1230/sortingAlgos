@@ -46,9 +46,24 @@ const insertionSortSlice = (arr) => {
   return sortedArr;
 };
 
+const insert = ([first, ...rest], item) => {
+  console.log(`first: ${first}`);
+  console.log(`rest: ${rest}`);
+  if (first === undefined) {
+    return [item];
+  } if (item <= first) {
+    return [item, first, ...rest];
+  }
+  return [first, ...insert(rest, item)];
+};
+
+const insertionSortReduce = (items) => items.reduce(insert, []);
+
 
 const unsortedArr = [3, 5, 7, 1, 2, 4, 6, 1, 7, 1, 8, 9, 2];
 const unsortedArr2 = [3, 5, 7, 1, 2, 4, 6, 1, 7, 1, 8, 9, 2];
+const unsortedArr3 = [3, 5, 7, 1, 2, 4, 6, 1, 7, 1, 8, 9, 2];
 
 console.log(insertionSort(unsortedArr));
 console.log(insertionSortSlice(unsortedArr2));
+console.log(insertionSortReduce(unsortedArr3));
