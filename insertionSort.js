@@ -47,8 +47,6 @@ const insertionSortSlice = (arr) => {
 };
 
 const insert = ([first, ...rest], item) => {
-  console.log(`first: ${first}`);
-  console.log(`rest: ${rest}`);
   if (first === undefined) {
     return [item];
   } if (item <= first) {
